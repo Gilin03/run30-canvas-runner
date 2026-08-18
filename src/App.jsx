@@ -177,7 +177,7 @@ const [records, setRecords] = useState(() => {
   setRecords((prev) => {
     const updated = {
       ...prev,
-      [difficulty]: [
+      [difficultyRef.current]: [
         ...prev[difficulty],
         {
           time: Number(time.toFixed(1)),
@@ -723,11 +723,19 @@ elapsedTimeRef.current = currentTime
 
 setElapsedTime(currentTime)
 
-if (elapsedTimeRef.current >= GAME_DURATION) {
+if (
+  elapsedTimeRef.current >= GAME_DURATION &&
+  gameStateRef.current === 'PLAYING'
+) {
   elapsedTimeRef.current = GAME_DURATION
 
   gameStateRef.current = 'CLEAR'
   setGameState('CLEAR')
+
+  saveRecord(
+    GAME_DURATION,
+    'CLEAR',
+  )
 }
 
 const currentDifficulty =
@@ -767,20 +775,22 @@ obstaclesRef.current.forEach(
           of obstaclesRef.current
         ) {
           if (
-            checkCollision(
-              player,
-              obstacle,
-            )
-          ) {
-            gameStateRef.current =
-              'GAME_OVER'
+  checkCollision(
+    player,
+    obstacle,
+  )
+) {
+  gameStateRef.current = 'GAME_OVER'
 
-            setGameState(
-              'GAME_OVER',
-            )
+  setGameState('GAME_OVER')
 
-            break
-          }
+  saveRecord(
+    elapsedTimeRef.current,
+    'GAME_OVER',
+  )
+
+  break
+}
         }
       }
 
