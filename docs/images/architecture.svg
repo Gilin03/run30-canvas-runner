@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" viewBox="0 0 1100 640" role="img" aria-labelledby="title desc">
+  <title id="title">RUN! 30 동작 구조</title>
+  <desc id="desc">키보드 입력이 React 상태와 참조값을 거쳐 게임 루프와 Canvas 렌더링으로 이어지고, 플레이 기록은 LocalStorage에 저장되는 구조입니다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="640" rx="24" fill="#f8fafc"/>
+  <text x="70" y="72" fill="#0f172a" font-family="Arial, sans-serif" font-size="36" font-weight="700">RUN! 30 동작 구조</text>
+  <text x="70" y="108" fill="#64748b" font-family="Arial, sans-serif" font-size="19">입력 → 상태 관리 → 게임 계산 → Canvas 화면</text>
+
+  <rect x="70" y="190" width="210" height="180" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="175" y="235" text-anchor="middle" fill="#0f172a" font-family="Arial, sans-serif" font-size="22" font-weight="700">키보드 입력</text>
+  <text x="175" y="275" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-size="17">SPACE / ↑  점프</text>
+  <text x="175" y="303" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-size="17">↓  숙이기</text>
+  <text x="175" y="331" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-size="17">P  일시정지</text>
+  <text x="175" y="359" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-size="17">R  다시 시작</text>
+
+  <rect x="315" y="190" width="210" height="180" rx="14" fill="#eef2ff" stroke="#a5b4fc" stroke-width="2"/>
+  <text x="420" y="235" text-anchor="middle" fill="#1e1b4b" font-family="Arial, sans-serif" font-size="22" font-weight="700">React 상태 · 참조값</text>
+  <text x="420" y="285" text-anchor="middle" fill="#4338ca" font-family="Arial, sans-serif" font-size="17">게임 상태</text>
+  <text x="420" y="315" text-anchor="middle" fill="#4338ca" font-family="Arial, sans-serif" font-size="17">플레이어 · 장애물</text>
+  <text x="420" y="345" text-anchor="middle" fill="#4338ca" font-family="Arial, sans-serif" font-size="17">난이도 · 플레이 기록</text>
+
+  <rect x="560" y="190" width="210" height="180" rx="14" fill="#ecfeff" stroke="#67e8f9" stroke-width="2"/>
+  <text x="665" y="235" text-anchor="middle" fill="#164e63" font-family="Arial, sans-serif" font-size="22" font-weight="700">게임 루프</text>
+  <text x="665" y="285" text-anchor="middle" fill="#0e7490" font-family="Arial, sans-serif" font-size="17">requestAnimationFrame</text>
+  <text x="665" y="315" text-anchor="middle" fill="#0e7490" font-family="Arial, sans-serif" font-size="17">중력 · 속도 계산</text>
+  <text x="665" y="345" text-anchor="middle" fill="#0e7490" font-family="Arial, sans-serif" font-size="17">충돌 판정</text>
+
+  <rect x="805" y="190" width="225" height="180" rx="14" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text x="917" y="235" text-anchor="middle" fill="#7c2d12" font-family="Arial, sans-serif" font-size="22" font-weight="700">Canvas 2D 렌더링</text>
+  <text x="917" y="285" text-anchor="middle" fill="#c2410c" font-family="Arial, sans-serif" font-size="17">플레이어 · 장애물</text>
+  <text x="917" y="315" text-anchor="middle" fill="#c2410c" font-family="Arial, sans-serif" font-size="17">파티클 효과</text>
+  <text x="917" y="345" text-anchor="middle" fill="#c2410c" font-family="Arial, sans-serif" font-size="17">화면 흔들림</text>
+
+  <rect x="315" y="455" width="455" height="115" rx="14" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <text x="542" y="500" text-anchor="middle" fill="#14532d" font-family="Arial, sans-serif" font-size="22" font-weight="700">플레이 기록 저장</text>
+  <text x="542" y="537" text-anchor="middle" fill="#15803d" font-family="Arial, sans-serif" font-size="17">LocalStorage · run30-records · 난이도별 최대 10개</text>
+
+  <path d="M280 280 H315" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M525 280 H560" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M770 280 H805" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M420 370 V455" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <text x="70" y="610" fill="#64748b" font-family="Arial, sans-serif" font-size="16">별도 Backend와 외부 API 없이 브라우저에서 동작합니다.</text>
+</svg>
